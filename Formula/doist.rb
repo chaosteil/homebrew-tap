@@ -1,20 +1,20 @@
 class Doist < Formula
   desc "doist is an unofficial command line app for interacting with the Todoist API"
   homepage "https://github.com/chaosteil/doist"
-  version "0.3.3"
+  version "0.3.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/chaosteil/doist/releases/download/v0.3.3/doist-aarch64-apple-darwin.tar.xz"
-      sha256 "692f0d14e00de90fc32dd71a4421de5bc7a400b5cfcc9556348b90c6ce796782"
+      url "https://github.com/chaosteil/doist/releases/download/v0.3.4/doist-aarch64-apple-darwin.tar.xz"
+      sha256 "24cdef7078221c50c932ffd8a1bf5b300c1309a3a0623fb2c7349cfb0b809348"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/chaosteil/doist/releases/download/v0.3.3/doist-x86_64-apple-darwin.tar.xz"
-      sha256 "5e63287169bed2dbbdc304f991673957a9d587852cbabaa679a6477b27f917f0"
+      url "https://github.com/chaosteil/doist/releases/download/v0.3.4/doist-x86_64-apple-darwin.tar.xz"
+      sha256 "111fac63a0b5c6deaa78e79c1b385e4550da43b3b5dc9d86a2fd82b2e3410fce"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/chaosteil/doist/releases/download/v0.3.3/doist-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "0c93345b24728a02e0939c151f127b9c25c9ceed84e4149c9893d5b96ba8d51a"
+    url "https://github.com/chaosteil/doist/releases/download/v0.3.4/doist-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "d5f1092dc833e7ac2a81cd09cb4678f5da8f1c49cb9c9a5aa8f54c4774ca43b1"
   end
   license "MIT"
 
