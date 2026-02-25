@@ -3,7 +3,7 @@ cask "doist" do
   name "doist"
   desc "doist is an unofficial command line app for interacting with the Todoist API"
   homepage "https://github.com/chaosteil/doist"
-  version "0.4.0"
+  version "0.4.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,18 +14,24 @@ cask "doist" do
   on_macos do
     on_intel do
       url "https://github.com/chaosteil/doist/releases/download/v#{version}/doist_#{version}_darwin_amd64.tar.gz"
-      sha256 "a5c1548ded04e162ce5bfcc88773ff5e4b2125dc270932739057031a268dd8aa"
+      sha256 "d4b5e1a56c3d9d6c480d59df3e7829cdb7e62238e05dd3da00a2e944e900118a"
     end
     on_arm do
       url "https://github.com/chaosteil/doist/releases/download/v#{version}/doist_#{version}_darwin_arm64.tar.gz"
-      sha256 "449c796e9b56e6f8eb1980b85bde43a4db538ff95b8be5e0922265eb6e8c8289"
+      sha256 "e25ffea113182a5dbb5ac82e94a2c7412feaafdadcdb87719b7be13651ac3992"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/chaosteil/doist/releases/download/v#{version}/doist_#{version}_linux_amd64.tar.gz"
-      sha256 "8e303153008a54ce55070e4df671a1c2f23bbee8f121a278619e9b674fa8ef5e"
+      sha256 "574f7a3d76489c0ccb6ffafac0d0c64356718a170bdd23a6ac624cf733fc08d3"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/doist"]
     end
   end
 
