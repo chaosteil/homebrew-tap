@@ -18,6 +18,11 @@ class Doist < Formula
   end
   license "MIT"
 
+  livecheck do
+    url :homepage
+    strategy :github_latest
+  end
+
   BINARY_ALIASES = {
     "aarch64-apple-darwin":     {},
     "x86_64-apple-darwin":      {},
